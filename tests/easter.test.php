@@ -22,4 +22,6 @@ test("easter_date", function(){
 test("easter_days", function(){
     $daysFromMarch21 = _easter_days(2025);
     expect($daysFromMarch21)->toBe(30);
+    $daysFromMarch21 = _easter_days(2026);
+    expect($daysFromMarch21)->toBe(15);
 });
