@@ -1,6 +1,8 @@
 <?php
 
-require_once("./src/easter.php");
+namespace scalp;
+
+require_once(__DIR__."/src/easter.php");
 
 date_default_timezone_set('CET');
 

@@ -1,10 +1,17 @@
 <?php
 
-function _easter_date($year)
+namespace scalp;
+
+function easter_date($year)
 {
+    // If php is compiled with calendar then easter_date exists
+    if (function_exists("\\easter_date"))
+    {
+        return \easter_date($year);
+    }
     // https://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch38.html
     // Algorithm F
-
+    //
     // G is the Golden Number-1
     // C is the century-1
     // H is 23-Epact (modulo 30)
@@ -24,25 +31,12 @@ function _easter_date($year)
     return $ts;
 }
 
-function _easter_days($year)
+function easter_days($year)
 {
+    // If php is compiled with calendar then easter_days exists
+    if (function_exists("\\easter_days"))
+    {
+        return \easter_days($year);
+    }
     return (int)round((easter_date($year)-mktime(0, 0, 0, 3, 21, $year))/(3600*24));
 }
-
-// If php is not compiled with calendar then easter_date/easter_days doesn't exist
-if(!function_exists("easter_date"))
-{
-    function easter_date($year)
-    {
-        return _easter_date($year);
-    }
-}
-
-if(!function_exists("easter_days"))
-{
-    function easter_days($year)
-    {
-        return _easter_days($year);
-    }
-}
-
