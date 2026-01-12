@@ -24,6 +24,19 @@ $fixed_holidays = [
 ];
 
 $year = date('Y');
+
+$epiphany_ts = mktime(12, 0, 0, 1, 6, $year);
+if(date('N', $epiphany_ts) == 2) 
+{
+    // Epiphany is on tuesday, monday is halfday
+    $market_halfday["{$year}-01-05"] = "halfday monday, Epiphany on tuesday";
+}
+if(date('N', $epiphany_ts) == 4) 
+{
+    // Epiphany is on thursday, friday is halfday
+    $market_halfday["{$year}-01-07"] = "halfday friday, Epiphany on thursday";
+}
+
 foreach($fixed_holidays as $fh_md => $fh_name)
 {
     $market_closed["{$year}-{$fh_md}"] = $fh_name;
