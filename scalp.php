@@ -2,11 +2,40 @@
 
 namespace scalp;
 
-require_once(__DIR__."/src/easter.php");
+require_once(__DIR__."/src/calendar_se.php");
+require_once(__DIR__."/src/calendar_us.php");
+require_once(__DIR__."/src/calendar_uk.php");
 
-date_default_timezone_set('CET');
+date_default_timezone_set('UTC');
 
 
+
+function get_market_calendars($year = null)
+{
+    if ($year === null)
+    {
+        $year = date('Y');
+    }
+
+    $market_calendar["SE"] = get_swedish_calendar($year);
+    $market_calendar["US"] = get_us_calendar($year);
+    $market_calendar["GB"] = get_uk_calendar($year);
+
+    return $market_calendar;
+}
+
+
+
+
+
+$year = date('Y');
+$cal = get_swedish_calendar($year);
+
+date_default_timezone_set($cal->getTimezone());
+
+
+
+/*
 
 // Set market closed and half days
 $market_closed = [];
@@ -23,7 +52,7 @@ $fixed_holidays = [
     "12-31" => "New Years Eve",
 ];
 
-$year = date('Y');
+
 
 $epiphany_ts = mktime(12, 0, 0, 1, 6, $year);
 if(date('N', $epiphany_ts) == 2) 
@@ -126,3 +155,5 @@ function is_half_day($ts)
     // Half days
     return isset($market_halfday[$ymd]);
 }
+
+*/
