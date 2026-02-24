@@ -108,7 +108,7 @@ function get_holidays($year)
   
     //$holidays["Father's Day"] = date('Y-m-d', strtotime('third sunday of june '.$year));
     
-
+    $holidays["Juneteenth"] = "{$year}-06-19";
 
 
     // Midsummers Eve, a Friday between June 19 to 25

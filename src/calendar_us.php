@@ -23,17 +23,19 @@ function get_us_calendar($year = null)
 
     $cal->addClosedDay($holidays["New Year's Day"], "New Year's Day");
     $cal->addClosedDay($holidays["Martin Luther King, Jr. Day"], "Martin Luther King, Jr. Day");
+    $cal->addClosedDay($holidays["Presidents' Day"], "Presidents' Day");
+    
     $cal->addClosedDay($holidays["Good Friday"], "Good Friday");
     $cal->addClosedDay($holidays["Memorial Day"], "Memorial Day");
     $cal->addClosedDay($holidays["Juneteenth"], "Juneteenth");
     $cal->addClosedDay($holidays["Independence Day holiday"], "Independence Day holiday");
     $cal->addClosedDay($holidays["Labor Day"], "Labor Day");
-    $cal->addClosedDay($holidays["Thanksgiving Day"], "Thanksgiving Day");
+    $cal->addClosedDay($holidays["Thanksgiving"], "Thanksgiving");
     $cal->addClosedDay($holidays["Christmas Day"], "Christmas Day");
 
-    $closing_time_halfday = "19:00"; // In UTC, 14:00 in New York
+    $closing_time_halfday = "14:00"; 
     
-    $cal->addHalfDay($holidays["Good Friday"], "17:00");
+    //$cal->addHalfDay($holidays["Good Friday"], "12:00");
 
     $cal->addHalfDay($holidays["Columbus Day"], $closing_time_halfday);
     $cal->addHalfDay($holidays["Veterans Day"], $closing_time_halfday);

@@ -14,6 +14,8 @@ date_default_timezone_set("UTC");
 test("get_swedish_calendar 2026", function(){
     $cal = \scalp\get_swedish_calendar(2026);
     expect($cal->getTimezone())->toBe("CET");
+    expect($cal->getCountryCode())->toBe("SE");
+    expect($cal->getCountryCode())->toBe("SE");
 
     date_default_timezone_set($cal->getTimezone());
 

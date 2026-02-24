@@ -28,7 +28,7 @@ function get_uk_calendar($year = null)
     $cal->addClosedDay($holidays["Spring Bank Holiday"], "Spring Bank Holiday");
     $cal->addClosedDay($holidays["Summer Bank Holiday"], "Summer Bank Holiday");
     $cal->addClosedDay($holidays["Christmas Day"], "Christmas Day");
-    $cal->addClosedDay($holidays["Boxing Day"], "Boxing Day");
+    $cal->addClosedDay($holidays["Boxing Day holiday"], "Boxing Day holiday");
 
     $cal->addHalfDay($holidays["Christmas Eve"], "13:00");
     $cal->addHalfDay($holidays["New Year's Eve"], "13:00");

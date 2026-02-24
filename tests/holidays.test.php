@@ -38,6 +38,7 @@ test("get_holidays 2026", function(){
     expect($holidays["Memorial Day"])->toBe("2026-05-25");
     expect($holidays["Spring Bank Holiday"])->toBe("2026-05-25");
 
+    expect($holidays["Juneteenth"])->toBe("2026-06-19");
     expect($holidays["Midsummers Eve"])->toBe("2026-06-19");
     expect($holidays["Civic Holiday"])->toBe("2026-08-03");
 

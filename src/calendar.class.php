@@ -120,6 +120,11 @@ class Calendar
         return $this->timezone;
     }
 
+    public function getCountryCode()
+    {
+        return $this->countrycode;
+    }
+
 }
 
 
