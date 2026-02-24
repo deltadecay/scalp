@@ -97,7 +97,6 @@ normally the following Monday.
 * January 1, New Year's Day, closed
 * January 6, Epiphany, closed
 * April 3, Good Friday, closed
-* April 5, Easter, closed
 * April 6, Easter Monday, closed
 * April 25, Liberation Day, closed
 * May 1, Labour Day, First of May, closed
