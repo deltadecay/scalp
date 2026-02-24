@@ -24,9 +24,6 @@ function get_it_calendar($year = null)
     $cal->addClosedDay($holidays["New Year's Day"], "New Year's Day");
     $cal->addClosedDay($holidays["Epiphany"], "Epiphany");
     $cal->addClosedDay($holidays["Good Friday"], "Good Friday");
-    // Easter is 2 days before Easter Monday
-    $easter = date('Y-m-d', strtotime($holidays["Easter Monday"].' -1 day'));
-    $cal->addClosedDay($easter, "Easter");
     $cal->addClosedDay($holidays["Easter Monday"], "Easter Monday");
     $cal->addClosedDay($holidays["Liberation Day"], "Liberation Day");
     $cal->addClosedDay($holidays["First of May"], "Labour Day");
