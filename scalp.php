@@ -5,6 +5,9 @@ namespace scalp;
 require_once(__DIR__."/src/calendar_se.php");
 require_once(__DIR__."/src/calendar_us.php");
 require_once(__DIR__."/src/calendar_uk.php");
+require_once(__DIR__."/src/calendar_de.php");
+require_once(__DIR__."/src/calendar_fr.php");
+require_once(__DIR__."/src/calendar_it.php");
 
 date_default_timezone_set('UTC');
 
@@ -20,6 +23,9 @@ function get_market_calendars($year = null)
     $market_calendar["SE"] = get_swedish_calendar($year);
     $market_calendar["US"] = get_us_calendar($year);
     $market_calendar["GB"] = get_uk_calendar($year);
+    $market_calendar["DE"] = get_de_calendar($year);
+    $market_calendar["FR"] = get_fr_calendar($year);
+    $market_calendar["IT"] = get_it_calendar($year);
 
     return $market_calendar;
 }
