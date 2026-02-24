@@ -4,7 +4,7 @@ namespace scalp;
 require_once(__DIR__."/holidays.php");
 require_once(__DIR__."/calendar.class.php");
 
-function get_swedish_calendar($year = null)
+function get_se_calendar($year = null)
 {
     if ($year === null)
     {

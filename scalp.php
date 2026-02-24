@@ -22,7 +22,7 @@ function get_market_calendars($year = null)
         $year = date('Y');
     }
 
-    $market_calendar["SE"] = get_swedish_calendar($year);
+    $market_calendar["SE"] = get_se_calendar($year);
     $market_calendar["US"] = get_us_calendar($year);
     $market_calendar["GB"] = get_uk_calendar($year);
     $market_calendar["DE"] = get_de_calendar($year);
