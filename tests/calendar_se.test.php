@@ -17,7 +17,7 @@ test("get_swedish_calendar 2026", function(){
     expect($cal->getCountryCode())->toBe("SE");
     expect($cal->getCountryCode())->toBe("SE");
 
-    date_default_timezone_set($cal->getTimezone());
+    $cal->applyTimezone();
 
     // Check that all holidays are marked as closed, do not test for time
 

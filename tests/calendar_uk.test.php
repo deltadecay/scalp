@@ -16,7 +16,7 @@ test("get_uk_calendar 2026", function(){
     expect($cal->getTimezone())->toBe("GMT");
     expect($cal->getCountryCode())->toBe("GB");
 
-    date_default_timezone_set($cal->getTimezone());
+    $cal->applyTimezone();
 
     // Check that all holidays are marked as closed, do not test for time
 /*

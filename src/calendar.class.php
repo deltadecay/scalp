@@ -125,6 +125,11 @@ class Calendar
         return $this->countrycode;
     }
 
+    public function applyTimezone()
+    {
+        date_default_timezone_set($this->timezone);
+    }
+
 }
 
 
