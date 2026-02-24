@@ -8,6 +8,8 @@ require_once(__DIR__."/src/calendar_uk.php");
 require_once(__DIR__."/src/calendar_de.php");
 require_once(__DIR__."/src/calendar_fr.php");
 require_once(__DIR__."/src/calendar_it.php");
+require_once(__DIR__."/src/calendar_es.php");
+require_once(__DIR__."/src/calendar_ch.php");
 
 date_default_timezone_set('UTC');
 
@@ -26,6 +28,8 @@ function get_market_calendars($year = null)
     $market_calendar["DE"] = get_de_calendar($year);
     $market_calendar["FR"] = get_fr_calendar($year);
     $market_calendar["IT"] = get_it_calendar($year);
+    $market_calendar["ES"] = get_es_calendar($year);
+    $market_calendar["CH"] = get_ch_calendar($year);
 
     return $market_calendar;
 }
