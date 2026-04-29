@@ -2,6 +2,14 @@
 
 namespace scalp;
 
+/**
+ * Returns the timestamp for Easter Sunday in a given year.
+ *
+ * @param int $year The year to calculate Easter Sunday for.
+ * @return int The timestamp.
+ * @see https://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch38.html
+ * @see https://en.wikipedia.org/wiki/Date_of_Easter
+ */
 function easter_date($year)
 {
     // If php is compiled with calendar then easter_date exists
@@ -31,6 +39,12 @@ function easter_date($year)
     return $ts;
 }
 
+/**
+ * Returns the number of days between March 21 and Easter Sunday for a given year.
+ *
+ * @param int $year The year to calculate the number of days for.
+ * @return int The number of days.
+ */
 function easter_days($year)
 {
     // If php is compiled with calendar then easter_days exists

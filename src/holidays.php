@@ -22,6 +22,13 @@ function weekday_name($t)
     return date('l', $t);
 }
 
+/**
+ * Returns an array of holidays for the given year.
+ *
+ * @param int $year The year to get holidays for.
+ * @return array An associative array where keys are holiday names and values are dates in 'Y-m-d' format.
+ * @todo Add more holidays for different countries.
+ */
 function get_holidays($year)
 {
     $holidays = [];
