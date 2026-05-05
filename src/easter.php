@@ -13,9 +13,18 @@ namespace scalp;
 function easter_date($year)
 {
     // If php is compiled with calendar then easter_date exists
-    if (function_exists("\\easter_date"))
+    if (function_exists("\\easter_date") && function_exists("\\easter_days"))
     {
-        return \easter_date($year);
+    	// The php easter_date doesn't use the timezone set by date_default_timezone_set
+     	// as noted in the documentation https://www.php.net/manual/en/function.easter-date.php
+      	// echo date('Y-m-d', easter_date(2025)); prints out 2025-04-19 when 
+      	// date_default_timezone_set('UTC') was set prior. Easter is 2025-04-20.
+        //return \easter_date($year);
+
+        // Workaround is to use easter_days (which is correct) and add to March 21
+        $march21 = mktime(12, 0, 0, 3, 21, $year);
+        $days_from_3_21 = easter_days($year);
+        return strtotime($days_from_3_21.' days', $march21);
     }
     // https://www.linuxtopia.org/online_books/programming_books/python_programming/python_ch38.html
     // Algorithm F
